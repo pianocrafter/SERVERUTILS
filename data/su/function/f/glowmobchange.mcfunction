@@ -20,6 +20,7 @@ execute if entity @s[scores={glowmobs=20}] run function su:f/gm/witch
 execute if entity @s[scores={glowmobs=21}] run function su:f/gm/witherskel
 
 execute if entity @s[scores={glowmobs=22}] run function su:f/gm/creeper
+execute if entity @s[scores={glowmobs=23}] run function su:f/gm/enderman
 
 execute if entity @s[scores={glowmobs=97}] run function su:f/gm/1passive
 execute if entity @s[scores={glowmobs=98}] run function su:f/gm/2pillagers

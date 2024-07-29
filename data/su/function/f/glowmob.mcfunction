@@ -21,3 +21,4 @@ execute as @s[tag=glowmobWITCH] run effect give @e[type=witch,distance=..128] mi
 execute as @s[tag=glowmobWITHERSKEL] run effect give @e[type=wither_skeleton,distance=..128] minecraft:glowing 1 0 true
 
 execute as @s[tag=glowmobCREEPER] run effect give @e[type=creeper,distance=..128] minecraft:glowing 1 0 true
+execute as @s[tag=glowmobENDERMAN] run effect give @e[type=enderman,distance=..128] minecraft:glowing 1 0 true

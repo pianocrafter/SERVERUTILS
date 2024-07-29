@@ -33,6 +33,10 @@ execute if entity @s[tag=glowmobELDER] run tellraw @s ["",{"text":"ELDER GUARDIA
 execute if entity @s[tag=!glowmobELDER] run tellraw @s ["",{"text":"ELDER GUARDIAN - [","color":"dark_green"},{"text":"Enabled","color":"gray","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 7"}},{"text":"/","color":"dark_green","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 7"}},{"text":"Disabled","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 7"}},{"text":"]","color":"dark_green"}]
 #execute if entity @s[scores={glowmobs=7}] run function su:f/gm/elder
 
+execute if entity @s[tag=glowmobENDERMAN] run tellraw @s ["",{"text":"ENDERMAN - [","color":"dark_green"},{"text":"Enabled","bold":true,"color":"green","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 23"}},{"text":"/","color":"dark_green","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 23"}},{"text":"Disabled","color":"gray","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 23"}},{"text":"]","color":"dark_green"}]
+execute if entity @s[tag=!glowmobENDERMAN] run tellraw @s ["",{"text":"ENDERMAN - [","color":"dark_green"},{"text":"Enabled","color":"gray","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 23"}},{"text":"/","color":"dark_green","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 23"}},{"text":"Disabled","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 23"}},{"text":"]","color":"dark_green"}]
+#execute if entity @s[scores={glowmobs=23}] run function su:f/gm/enderman
+
 execute if entity @s[tag=glowmobEVOKER] run tellraw @s ["",{"text":"EVOKER - [","color":"dark_green"},{"text":"Enabled","bold":true,"color":"green","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 8"}},{"text":"/","color":"dark_green","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 8"}},{"text":"Disabled","color":"gray","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 8"}},{"text":"]","color":"dark_green"}]
 execute if entity @s[tag=!glowmobEVOKER] run tellraw @s ["",{"text":"EVOKER - [","color":"dark_green"},{"text":"Enabled","color":"gray","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 8"}},{"text":"/","color":"dark_green","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 8"}},{"text":"Disabled","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 8"}},{"text":"]","color":"dark_green"}]
 #execute if entity @s[scores={glowmobs=8}] run function su:f/gm/evoker
@@ -53,9 +57,7 @@ execute if entity @s[tag=glowmobPIG] run tellraw @s ["",{"text":"PIG - [","color
 execute if entity @s[tag=!glowmobPIG] run tellraw @s ["",{"text":"PIG - [","color":"dark_green"},{"text":"Enabled","color":"gray","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 12"}},{"text":"/","color":"dark_green","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 12"}},{"text":"Disabled","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 12"}},{"text":"]","color":"dark_green"}]
 #execute if entity @s[scores={glowmobs=12}] run function su:f/gm/pig
 
-execute if entity @s[tag=glowmobPILLAGER] run tellraw @s ["",{"text":"PILLAGER - [","color":"dark_green"},{"text":"Enabled","bold":true,"color":"green","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 13"}},{"text":"/","color":"dark_green","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 13"}},{"text":"Disabled","color":"gray","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 13"}},{"text":"]","color":"dark_green"}]
-execute if entity @s[tag=!glowmobPILLAGER] run tellraw @s ["",{"text":"PILLAGER - [","color":"dark_green"},{"text":"Enabled","color":"gray","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 13"}},{"text":"/","color":"dark_green","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 13"}},{"text":"Disabled","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger glowmobs set 13"}},{"text":"]","color":"dark_green"}]
-#execute if entity @s[scores={glowmobs=13}] run function su:f/gm/pillager
+
 
 
 tellraw @s {"text":" "}
