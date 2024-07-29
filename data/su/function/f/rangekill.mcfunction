@@ -1,0 +1,2 @@
+execute as @e[type=!#su:itemexlude,distance=..5] unless entity @s[scores={itemKillTime=1..}] run scoreboard players set @s itemKillTime 5
+execute as @e[type=!#su:itemexlude,distance=..5,scores={itemKillTime=5}] at @s run summon area_effect_cloud ~ ~ ~ {Duration:10s,Tags:["playerKillTest"]}

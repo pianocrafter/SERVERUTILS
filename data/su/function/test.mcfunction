@@ -1,0 +1,2 @@
+say test
+tp @a ~ ~ ~

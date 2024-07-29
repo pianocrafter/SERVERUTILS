@@ -1,0 +1,23 @@
+execute as @s[tag=glowmobBEE] run effect give @e[type=bee,distance=..128] minecraft:glowing 1 0 true
+execute as @s[tag=glowmobCHICKEN] run effect give @e[type=chicken,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobCOW] run effect give @e[type=cow,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobDONKEY] run effect give @e[type=donkey,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobDROWNED] run effect give @e[type=drowned,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobELDER] run effect give @e[type=elder_guardian,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobEVOKER] run effect give @e[type=evoker,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobGHAST] run effect give @e[type=ghast,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobGOAT] run effect give @e[type=goat,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobHORSE] run effect give @e[type=#su:horses,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobPIG] run effect give @e[type=pig,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobPILLAGER] run effect give @e[type=pillager,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobRAVAGER] run effect give @e[type=ravager,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobSHEEP] run effect give @e[type=sheep,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobSHULKER] run effect give @e[type=shulker,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobSQUID] run effect give @e[type=squid,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobGSQUID] run effect give @e[type=glow_squid,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobVILLAGER] run effect give @e[type=villager,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobVINDICATOR] run effect give @e[type=vindicator,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobWITCH] run effect give @e[type=witch,distance=..128] minecraft:glowing 1 0 true 
+execute as @s[tag=glowmobWITHERSKEL] run effect give @e[type=wither_skeleton,distance=..128] minecraft:glowing 1 0 true
+
+execute as @s[tag=glowmobCREEPER] run effect give @e[type=creeper,distance=..128] minecraft:glowing 1 0 true

@@ -1,0 +1,12 @@
+{
+  "values": [
+    "minecraft:item",
+	"#minecraft:arrows",
+	"minecraft:dragon_fireball",
+	"minecraft:experience_orb",
+	"minecraft:fireball",
+	"minecraft:area_effect_cloud",
+	"minecraft:player",
+	"minecraft:trident"
+  ]
+}

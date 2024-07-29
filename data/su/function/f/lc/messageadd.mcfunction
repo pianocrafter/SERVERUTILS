@@ -1,0 +1,4 @@
+#$data modify storage su:structures message.temp set value '$(tellraw),{"text":"[$(structure)] ","color":"$(color)","clickEvent":{"action":"run_command","value":"/trigger locate set $(id)"}}'
+$data modify storage su:structures message.temp set value '$(tellraw),{"text":" [","color":"dark_$(color)","clickEvent":{"action":"run_command","value":"/trigger locate set $(id)"}},{"text":"$(structure)","color":"$(color)","clickEvent":{"action":"run_command","value":"/trigger locate set $(id)"}},{"text":"]","color":"dark_$(color)","clickEvent":{"action":"run_command","value":"/trigger locate set $(id)"}}'
+
+data modify storage su:structures message.tellraw set from storage su:structures message.temp

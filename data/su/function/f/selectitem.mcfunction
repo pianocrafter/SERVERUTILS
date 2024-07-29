@@ -1,0 +1,4 @@
+execute positioned ~ ~1 ~ run tag @e[type=minecraft:item,tag=!PlayerItem,distance=..0.5] add nonPlayerItem
+execute unless entity @s[scores={magnet=0}] if predicate su:checktool positioned ~-5.5 ~-4.5 ~-5.5 as @e[type=item,dx=11.5,dy=12.5,dz=11.5] unless entity @s[tag=nonPlayerItem] unless entity @s[tag=encumbered] run tag @s add PlayerItem
+execute unless entity @s[scores={magnet=0}] if predicate su:checktool positioned ~-5.5 ~-4.5 ~-5.5 as @e[type=experience_orb,dx=11.5,dy=12.5,dz=11.5] unless entity @s[tag=nonPlayerItem] unless entity @s[tag=encumbered] run tag @s add PlayerItem
+execute unless entity @s[scores={magnet=0}] if predicate su:sneaking unless data entity @s SelectedItem positioned ~-5.5 ~-4.5 ~-5.5 as @e[type=item,dx=11.5,dy=12.5,dz=11.5] unless entity @s[tag=nonPlayerItem] unless entity @s[tag=encumbered] run tag @s add PlayerItem
