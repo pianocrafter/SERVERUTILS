@@ -5,3 +5,5 @@ execute unless entity @s[tag=glowmobCheck] run tag @s add glowmobCHICKEN
 
 scoreboard players set @s glowmobs 1
 tag @s remove glowmobCheck
+
+execute at @s run playsound minecraft:entity.chicken.ambient neutral @s ~ ~ ~

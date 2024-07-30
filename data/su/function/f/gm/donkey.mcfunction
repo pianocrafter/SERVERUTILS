@@ -5,3 +5,5 @@ execute unless entity @s[tag=glowmobCheck] run tag @s add glowmobDONKEY
 
 scoreboard players set @s glowmobs 1
 tag @s remove glowmobCheck
+
+execute at @s run playsound minecraft:entity.donkey.ambient neutral @s ~ ~ ~

@@ -5,3 +5,5 @@ execute unless entity @s[tag=glowmobCheck] run tag @s add glowmobGHAST
 
 scoreboard players set @s glowmobs 1
 tag @s remove glowmobCheck
+
+execute at @s run playsound minecraft:entity.ghast.ambient hostile @s ~ ~ ~

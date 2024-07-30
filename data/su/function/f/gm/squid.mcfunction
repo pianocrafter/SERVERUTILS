@@ -5,3 +5,5 @@ execute unless entity @s[tag=glowmobCheck] run tag @s add glowmobSQUID
 
 scoreboard players set @s glowmobs 100
 tag @s remove glowmobCheck
+
+execute at @s run playsound minecraft:entity.squid.ambient neutral @s ~ ~ ~
