@@ -173,9 +173,7 @@ execute as @a[scores={tppet=1,serverutiltoggle4=1..}] run title @s actionbar {"t
 execute as @a[scores={tppet=1},tag=!tppetenable] at @s run playsound minecraft:entity.wolf.ambient master @s ~ ~ ~
 execute as @a[scores={tppet=1},tag=!tppetenable] run tag @s add tppetenable
 
-execute as @e[type=wolf,nbt={Sitting:0b}] at @s run execute if data entity @s Owner run execute unless data entity @s Leash run execute at @s if entity @p[distance=64..] run tag @s add tptoowner
-execute as @e[type=cat,nbt={Sitting:0b}] at @s run execute if data entity @s Owner run execute unless data entity @s Leash run execute at @s if entity @p[distance=64..] run tag @s add tptoowner
-execute as @e[type=parrot,nbt={Sitting:0b}] at @s run execute if data entity @s Owner run execute unless data entity @s Leash run execute at @s if entity @p[distance=64..] run tag @s add tptoowner
+execute as @e[type=#su:pets,nbt={Sitting:0b}] at @s if data entity @s Owner unless data entity @s Leash if entity @p[distance=64..] run tag @s add tptoowner
 execute as @a[scores={tppet=0}] at @s run spreadplayers ~ ~ 3 3 true @e[tag=tptoowner]
 execute as @e[tag=tptoowner] at @s run execute if data entity @s Owner run execute at @s if entity @p[distance=64..] run tag @s add justteleported_inair
 execute as @e[tag=tptoowner] at @s run execute if data entity @s Owner run execute at @s if entity @p[distance=64..] run execute at @p run tp @s ^ ^ ^-2
