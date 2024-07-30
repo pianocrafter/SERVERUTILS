@@ -26,25 +26,34 @@ advancement revoke @a from su:cloneblock
 scoreboard players enable @a[advancements={su:anvil=true}] anvil
 scoreboard players enable @a[advancements={su:craftingtable=true}] craft
 scoreboard players enable @a[advancements={su:stonecut=true}] stonecut
-scoreboard players enable @a[advancements={su:grindstone=true}] grindstone
+scoreboard players enable @a[advancements={su:grindstone=true}] grind
 scoreboard players enable @a[advancements={su:echest=true}] echest
 scoreboard players enable @a[advancements={su:enchant=true}] enchant
+scoreboard players enable @a[advancements={su:loom=true}] loom
+scoreboard players enable @a[advancements={su:cartograph=true}] cartograph
+scoreboard players enable @a[advancements={su:smith=true}] smith
 
 execute as @a[scores={anvil=1..}] at @s run function su:f/ws/anvil
 execute as @a[scores={craft=1..}] at @s run function su:f/ws/craftingtable
 execute as @a[scores={stonecut=1..}] at @s run function su:f/ws/stonecutter
-execute as @a[scores={grindstone=1..}] at @s run function su:f/ws/grindstone
+execute as @a[scores={grind=1..}] at @s run function su:f/ws/grindstone
 execute as @a[scores={echest=1..}] at @s run function su:f/ws/enderchest
 execute as @a[scores={enchant=1..}] at @s run function su:f/ws/enchant
+execute as @a[scores={loom=1..}] at @s run function su:f/ws/loom
+execute as @a[scores={cartograph=1..}] at @s run function su:f/ws/cartograph
+execute as @a[scores={smith=1..}] at @s run function su:f/ws/smith
 
 execute as @e[type=minecraft:marker,tag=su.ws] at @s run function su:f/ws/wstick
 
 scoreboard players reset @a[scores={anvil=1..}] anvil
 scoreboard players reset @a[scores={craft=1..}] craft
 scoreboard players reset @a[scores={stonecut=1..}] stonecut
-scoreboard players reset @a[scores={grindstone=1..}] grindstone
+scoreboard players reset @a[scores={grind=1..}] grind
 scoreboard players reset @a[scores={echest=1..}] echest
 scoreboard players reset @a[scores={enchant=1..}] enchant
+scoreboard players reset @a[scores={loom=1..}] loom
+scoreboard players reset @a[scores={cartograph=1..}] cartograph
+scoreboard players reset @a[scores={smith=1..}] smith
 
 ###################################################################################################################################################################################################
 

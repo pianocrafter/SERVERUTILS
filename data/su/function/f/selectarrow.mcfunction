@@ -6,6 +6,8 @@ execute as @e[type=minecraft:trident,tag=!playerarrow,distance=..128] unless ent
 execute as @e[type=minecraft:trident,tag=!skelarrow,distance=..128] at @s as @e[type=!trident,limit=1,sort=nearest] if entity @s[type=minecraft:player] unless data entity @s SelectedItem run tag @e[type=trident,sort=nearest,limit=1] add playerarrow
 execute as @e[type=minecraft:trident,tag=!skelarrow,distance=..128] at @s as @e[type=!trident,limit=1,sort=nearest] if entity @s[type=minecraft:player] if predicate su:checkranged run tag @e[type=trident,sort=nearest,limit=1] add playerarrow
 
+execute at @e[type=#minecraft:arrows,tag=playerarrow,distance=..128] if entity @s[scores={encumber=1}] at @e[type=item,distance=..1] run function su:f/encumber
+execute at @e[type=minecraft:trident,tag=playerarrow,distance=..128] if entity @s[scores={encumber=1}] at @e[type=item,distance=..1] run function su:f/encumber
 execute as @e[type=#minecraft:arrows,tag=playerarrow,distance=..128] at @s run function su:f/rangekill
 execute as @e[type=minecraft:trident,tag=playerarrow,distance=..128] at @s run function su:f/rangekill
 
