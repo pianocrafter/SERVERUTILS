@@ -1,0 +1,18 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:bookshelf",
+            "count": {
+              "min": 15,
+              "max": 64
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
 schedule function su:u10sec 10s replace
-gamerule sendCommandFeedback false
+gamerule sendCommandFeedback true
+
+
 
 execute if entity @s[tag=su.mansion] if data storage su:structures s.mansion run data remove storage su:structures s.mansion
 execute if entity @s[tag=su.mansion] run data modify storage su:structures stemp.temp set string storage su:structures stemp.mansion 310

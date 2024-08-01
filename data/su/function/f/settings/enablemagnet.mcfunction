@@ -1,2 +1,2 @@
-data modify storage su:settings magnet set value 1b
+data remove storage su:settings magnet
 function su:_settings

@@ -17,21 +17,21 @@ execute as @a run scoreboard players operation @s playTimeHours = @s hc_playTime
 execute as @a run scoreboard players operation @s playTimeHours /= Math hc_playTimes
 
 ##For Seperate veinmine datapack
-scoreboard players enable @a veinmine
-scoreboard players reset @a[scores={veinmine=2..}] veinmine
+#scoreboard players enable @a veinmine
+#scoreboard players reset @a[scores={veinmine=2..}] veinmine
 
 advancement revoke @a from su:cloneblock
 
 ############################################################################################WORKSTATIONS###########################################################################################
-execute unless data su:settings ws.all run scoreboard players enable @a[advancements={su:anvil=true}] anvil
-execute unless data su:settings ws.all run scoreboard players enable @a[advancements={su:craftingtable=true}] craft
-execute unless data su:settings ws.all run scoreboard players enable @a[advancements={su:stonecut=true}] stonecut
-execute unless data su:settings ws.all run scoreboard players enable @a[advancements={su:grindstone=true}] grind
-execute unless data su:settings ws.all run scoreboard players enable @a[advancements={su:echest=true}] echest
-execute unless data su:settings ws.ench run scoreboard players enable @a[advancements={su:enchant=true}] enchant
-execute unless data su:settings ws.all run scoreboard players enable @a[advancements={su:loom=true}] loom
-execute unless data su:settings ws.all run scoreboard players enable @a[advancements={su:cartograph=true}] cartograph
-execute unless data su:settings ws.all run scoreboard players enable @a[advancements={su:smith=true}] smith
+execute unless data storage su:settings ws.all run scoreboard players enable @a[advancements={su:anvil=true}] anvil
+execute unless data storage su:settings ws.all run scoreboard players enable @a[advancements={su:craftingtable=true}] craft
+execute unless data storage su:settings ws.all run scoreboard players enable @a[advancements={su:stonecut=true}] stonecut
+execute unless data storage su:settings ws.all run scoreboard players enable @a[advancements={su:grindstone=true}] grind
+execute unless data storage su:settings ws.all run scoreboard players enable @a[advancements={su:echest=true}] echest
+execute unless data storage su:settings ws.ench run scoreboard players enable @a[advancements={su:enchant=true}] enchant
+execute unless data storage su:settings ws.all run scoreboard players enable @a[advancements={su:loom=true}] loom
+execute unless data storage su:settings ws.all run scoreboard players enable @a[advancements={su:cartograph=true}] cartograph
+execute unless data storage su:settings ws.all run scoreboard players enable @a[advancements={su:smith=true}] smith
 
 execute as @a[scores={anvil=1..}] at @s run function su:f/ws/anvil
 execute as @a[scores={craft=1..}] at @s run function su:f/ws/craftingtable
@@ -58,7 +58,8 @@ scoreboard players reset @a[scores={smith=1..}] smith
 ###################################################################################################################################################################################################
 
 ############################################################################################LOCATE COMMAND#########################################################################################
-execute unless data su:settings locate run scoreboard players enable @a locate
+execute unless data storage su:settings locate run scoreboard players enable @a locate
+
 
 execute as @a[scores={locate=1}] at @s run function su:f/lc/message
 execute as @a[tag=su.locate] run function su:f/lc/locate
@@ -69,8 +70,8 @@ scoreboard players reset @a[scores={locate=17..}] locate
 ###################################################################################################################################################################################################
 
 ############################################################################################PLAYER/MOB GLOW########################################################################################
-execute unless data su:settings glow run scoreboard players enable @a glow
-execute unless data su:settings glowmobs run scoreboard players enable @a glowmobs
+execute unless data storage su:settings glow run scoreboard players enable @a glow
+execute unless data storage su:settings glowmobs run scoreboard players enable @a glowmobs
 
 ####################################MOB GLOW####################################
 execute as @a[scores={glowmobs=2..99}] run function su:f/glowmobchange
@@ -99,8 +100,8 @@ execute in minecraft:the_end as @e[type=item,predicate=su:outofworld] unless pre
 
 ###################################################################################################################################################################################################
 
-############################################################################################ITEM ENCUMBERMENT######################################################################################
-execute unless data su:settings encumber run scoreboard players enable @a encumber
+#####################################################################################ITEM ENCUMBERMENT######################################################################################
+execute unless data storage su:settings encumber run scoreboard players enable @a encumber
 execute as @a[scores={encumber=1},tag=!encumberenable] run scoreboard players set @s serverutiltoggle 31
 execute as @a[scores={encumber=1,serverutiltoggle=1..}] run title @s actionbar {"text":"Encumberment: Enabled","bold":true,"color":"green"}
 execute as @a[scores={encumber=1},tag=!encumberenable] at @s run playsound minecraft:block.anvil.land master @s ~ ~ ~ 0.5
@@ -120,10 +121,10 @@ execute as @a[scores={encumber=0,serverutiltoggle=1..}] run title @s actionbar {
 execute as @a[scores={encumber=0},tag=encumberenable] at @s run playsound minecraft:block.anvil.land master @s ~ ~ ~ 0.5
 execute as @a[scores={encumber=0},tag=encumberenable] run tag @s remove encumberenable
 scoreboard players reset @a[scores={encumber=2..}] encumber
-###################################################################################################################################################################################################
+###########################################################################################################################################################################################
 
-############################################################################################ITEM MAGNET############################################################################################
-execute unless data su:settings magnet run scoreboard players enable @a magnet
+###################################################################################ITEM MAGNET############################################################################################
+execute unless data storage su:settings magnet run scoreboard players enable @a magnet
 execute as @a[scores={magnet=1},tag=!magnetenable] run scoreboard players set @s serverutiltoggle2 31
 execute as @a[scores={magnet=1,serverutiltoggle2=1..}] run title @s actionbar {"text":"Item Magnet: Enabled","bold":true,"color":"green"}
 execute as @a[scores={magnet=1},tag=!magnetenable] at @s run playsound minecraft:entity.player.teleport master @s ~ ~ ~
@@ -149,18 +150,18 @@ scoreboard players reset @a[scores={itemKillTest=1..}] itemKillTest
 scoreboard players reset @a[scores={itemDiamondTest=1..}] itemDiamondTest
 scoreboard players reset @a[scores={itemDiamondTest2=1..}] itemDiamondTest2
 scoreboard players reset @a[scores={itemNetheriteTest=1..}] itemNetheriteTest
-###############################################################################
+#######################################################################
 
 execute as @a[scores={magnet=0},tag=magnetenable] run scoreboard players set @s serverutiltoggle2 31
 execute as @a[scores={magnet=0,serverutiltoggle2=1..}] run title @s actionbar {"text":"Item Magnet: Disabled","bold":true,"color":"red"}
 execute as @a[scores={magnet=0},tag=magnetenable] at @s run playsound minecraft:entity.player.teleport master @s ~ ~ ~ 
 execute as @a[scores={magnet=0},tag=magnetenable] run tag @s remove magnetenable
 scoreboard players reset @a[scores={magnet=2..}] magnet
-###################################################################################################################################################################################################
+###########################################################################################################################################################################################
 
 
-############################################################################################XP COMBINE#############################################################################################
-execute unless data su:settings combinexp run scoreboard players enable @a combinexp
+####################################################################################XP COMBINE#############################################################################################
+execute unless data storage su:settings combinexp run scoreboard players enable @a combinexp
 execute as @a[scores={combinexp=1},tag=!combinexpenable] run scoreboard players set @s serverutiltoggle3 31
 execute as @a[scores={combinexp=1,serverutiltoggle3=1..}] run title @s actionbar {"text":"XP Combine: Enabled","bold":true,"color":"green"}
 execute as @a[scores={combinexp=1},tag=!combinexpenable] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~
@@ -216,17 +217,19 @@ scoreboard players reset @a[scores={surface=1..}] surface
 
 
 ############################################################################################FEATURE CONFIGURATIONS#################################################################################
-execute if data su:settings magnet run scoreboard players reset @a magnet
-execute if data su:settings encumber run scoreboard players reset @a encumber
-execute if data su:settings ws.all run scoreboard players reset @a anvil
-execute if data su:settings ws.all run scoreboard players reset @a craft
-execute if data su:settings ws.all run scoreboard players reset @a stonecut
-execute if data su:settings ws.all run scoreboard players reset @a grind
-execute if data su:settings ws.all run scoreboard players reset @a echest
-execute if data su:settings ws.all run scoreboard players reset @a loom
-execute if data su:settings ws.all run scoreboard players reset @a cartograph
-execute if data su:settings ws.all run scoreboard players reset @a smith
-execute if data su:settings ws.ench run scoreboard players reset @a enchant
+execute if data storage su:settings magnet run scoreboard players reset @a magnet
+execute if data storage su:settings magnet run tag @a[tag=magnetenable] remove magnetenable
+execute if data storage su:settings encumber run scoreboard players reset @a encumber
+execute if data storage su:settings encumber run tag @a[tag=encumberenable] remove encumberenable
+execute if data storage su:settings ws.all run scoreboard players reset @a anvil
+execute if data storage su:settings ws.all run scoreboard players reset @a craft
+execute if data storage su:settings ws.all run scoreboard players reset @a stonecut
+execute if data storage su:settings ws.all run scoreboard players reset @a grind
+execute if data storage su:settings ws.all run scoreboard players reset @a echest
+execute if data storage su:settings ws.all run scoreboard players reset @a loom
+execute if data storage su:settings ws.all run scoreboard players reset @a cartograph
+execute if data storage su:settings ws.all run scoreboard players reset @a smith
+execute if data storage su:settings ws.ench run scoreboard players reset @a enchant
 
 
 ###################################################################################################################################################################################################

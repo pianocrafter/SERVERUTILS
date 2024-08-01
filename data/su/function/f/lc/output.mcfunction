@@ -48,3 +48,4 @@ execute if entity @s[tag=su.svillage] unless data storage su:structures s.svilla
 execute if entity @s[tag=su.snvillage] unless data storage su:structures s.snvillage run data modify storage su:structures s.snvillage set value 'DISABLED'
 execute if entity @s[tag=su.tvillage] unless data storage su:structures s.tvillage run data modify storage su:structures s.tvillage set value 'DISABLED'
 execute if entity @s[tag=su.ecity] unless data storage su:structures s.ecity run data modify storage su:structures s.ecity set value 'DISABLED'
+

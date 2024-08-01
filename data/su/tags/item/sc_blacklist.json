@@ -39,6 +39,11 @@
 	"minecraft:string",
 	"minecraft:gunpowder",
 	"minecraft:flint",
-	"minecraft:spider_eye"
+	"minecraft:spider_eye",
+	"minecraft:sugar_cane",
+	"minecraft:sugar",
+	"minecraft:wheat",
+	"minecraft:potato",
+	"minecraft:poisonous_potato"
   ]
 }

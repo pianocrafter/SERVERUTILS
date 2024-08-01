@@ -1,2 +1,2 @@
-data modify storage su:settings encumber set value 1b
+data remove storage su:settings encumber
 function su:_settings
