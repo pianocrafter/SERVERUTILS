@@ -13,3 +13,5 @@ execute if data storage su:structures stemp.svillage run data remove storage su:
 execute if data storage su:structures stemp.snvillage run data remove storage su:structures s.snvillage
 execute if data storage su:structures stemp.tvillage run data remove storage su:structures s.tvillage
 execute if data storage su:structures stemp.ecity run data remove storage su:structures s.ecity
+execute if data storage su:structures stemp.whut run data remove storage su:structures s.whut
+execute if data storage su:structures stemp.trial run data remove storage su:structures s.trial

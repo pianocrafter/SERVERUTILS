@@ -50,8 +50,8 @@ execute if entity @s[tag=su.outpost] at @s store result storage su:structures st
 
 execute if entity @s[tag=su.pvillage] if data storage su:structures s.pvillage run data remove storage su:structures s.pvillage
 execute if entity @s[tag=su.pvillage] run data modify storage su:structures stemp.temp set string storage su:structures stemp.pvillage 310
-execute if entity @s[tag=su.pvillage] if data storage su:structures stemp.pvillage run data modify storage su:structures s.pvillage.code set value 'minecraft:village_plains'
-execute if entity @s[tag=su.pvillage] at @s store result storage su:structures stemp.distance int 1 run locate structure minecraft:village_plains
+execute if entity @s[tag=su.pvillage] if data storage su:structures stemp.pvillage run data modify storage su:structures s.pvillage.code set value 'minecraft:village'
+execute if entity @s[tag=su.pvillage] at @s store result storage su:structures stemp.distance int 1 run locate structure #minecraft:village
 
 execute if entity @s[tag=su.dvillage] if data storage su:structures s.dvillage run data remove storage su:structures s.dvillage
 execute if entity @s[tag=su.dvillage] run data modify storage su:structures stemp.temp set string storage su:structures stemp.dvillage 310
@@ -78,6 +78,16 @@ execute if entity @s[tag=su.ecity] run data modify storage su:structures stemp.t
 execute if entity @s[tag=su.ecity] if data storage su:structures stemp.ecity run data modify storage su:structures s.ecity.code set value 'minecraft:end_city'
 execute if entity @s[tag=su.ecity] at @s store result storage su:structures stemp.distance int 1 run locate structure minecraft:end_city
 
+execute if entity @s[tag=su.whut] if data storage su:structures s.whut run data remove storage su:structures s.whut
+execute if entity @s[tag=su.whut] run data modify storage su:structures stemp.temp set string storage su:structures stemp.whut 310
+execute if entity @s[tag=su.whut] if data storage su:structures stemp.whut run data modify storage su:structures s.whut.code set value 'minecraft:witch_hut'
+execute if entity @s[tag=su.whut] at @s store result storage su:structures stemp.distance int 1 run locate structure minecraft:swamp_hut
+
+execute if entity @s[tag=su.trial] if data storage su:structures s.trial run data remove storage su:structures s.trial
+execute if entity @s[tag=su.trial] run data modify storage su:structures stemp.temp set string storage su:structures stemp.trial 310
+execute if entity @s[tag=su.trial] if data storage su:structures stemp.trial run data modify storage su:structures s.trial.code set value 'minecraft:trial_chambers'
+execute if entity @s[tag=su.trial] at @s store result storage su:structures stemp.distance int 1 run locate structure minecraft:trial_chambers
+
 
 execute if data storage su:structures stemp.temp run function su:f/lc/locateprocess
 
@@ -100,6 +110,8 @@ execute if entity @s[tag=su.svillage] run tag @s remove su.svillage
 execute if entity @s[tag=su.snvillage] run tag @s remove su.snvillage
 execute if entity @s[tag=su.tvillage] run tag @s remove su.tvillage
 execute if entity @s[tag=su.ecity] run tag @s remove su.ecity
+execute if entity @s[tag=su.whut] run tag @s remove su.whut
+execute if entity @s[tag=su.trial] run tag @s remove su.trial
 tag @s remove su.locate
 
 gamerule sendCommandFeedback false

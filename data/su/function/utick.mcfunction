@@ -63,10 +63,10 @@ execute unless data storage su:settings locate run scoreboard players enable @a 
 
 execute as @a[scores={locate=1}] at @s run function su:f/lc/message
 execute as @a[tag=su.locate] run function su:f/lc/locate
-execute as @a[scores={locate=2..16}] run function su:f/lc/locatemark
+execute as @a[scores={locate=2..18}] run function su:f/lc/locatemark
 
 scoreboard players reset @a[scores={locate=1}] locate
-scoreboard players reset @a[scores={locate=17..}] locate
+scoreboard players reset @a[scores={locate=19..}] locate
 ###################################################################################################################################################################################################
 
 ############################################################################################PLAYER/MOB GLOW########################################################################################
@@ -92,11 +92,13 @@ scoreboard players reset @a[scores={glowmobs=1..}] glowmobs
 ############################################################################################SLUT CHEST#############################################################################################
 
 #execute unless entity @e[type=minecraft:armor_stand,tag=slutchest] at @p run function su:f/sc/slutspawn
-execute as @e[type=minecraft:armor_stand,tag=slutchest] at @s run function su:f/sc/sluttick
-execute as @e[type=item,nbt={Age:5998s}] at @s unless predicate su:scblacklist as @n[type=minecraft:armor_stand,tag=slutchest] run function su:f/sc/slutitem
-execute as @e[type=item,nbt={Fire:300s}] at @s unless predicate su:scblacklist as @n[type=minecraft:armor_stand,tag=slutchest] run function su:f/sc/slutitem
-execute as @e[type=item,tag=encumbered,nbt={Age:1200s}] at @s unless predicate su:scblacklist as @n[type=minecraft:armor_stand,tag=slutchest] run function su:f/sc/slutitem
-execute in minecraft:the_end as @e[type=item,predicate=su:outofworld] unless predicate su:endblacklist unless predicate su:scblacklist in minecraft:overworld as @n[type=minecraft:armor_stand,tag=slutchest] run function su:f/sc/slutitem
+execute unless data storage su:settings slut as @n[type=minecraft:armor_stand,tag=slutchest] at @s run function su:f/sc/sluttick
+execute unless data storage su:settings slut as @e[type=item,nbt={Age:5998s}] at @s unless predicate su:scblacklist as @n[type=minecraft:armor_stand,tag=slutchest] run function su:f/sc/slutitem
+execute unless data storage su:settings slut as @e[type=item,nbt={Fire:300s}] at @s unless predicate su:scblacklist as @n[type=minecraft:armor_stand,tag=slutchest] run function su:f/sc/slutitem
+execute unless data storage su:settings slut as @e[type=item,nbt={Fire:160s}] at @s unless predicate su:scblacklist as @n[type=minecraft:armor_stand,tag=slutchest] run function su:f/sc/slutitem
+execute unless data storage su:settings slut as @e[type=item,nbt={Health:1s}] at @s unless predicate su:scblacklist as @n[type=minecraft:armor_stand,tag=slutchest] run function su:f/sc/slutitem
+execute unless data storage su:settings slut as @e[type=item,tag=encumbered,nbt={Age:1200s}] at @s unless predicate su:scblacklist as @n[type=minecraft:armor_stand,tag=slutchest] run function su:f/sc/slutitem
+execute unless data storage su:settings slut in minecraft:the_end as @e[type=item,predicate=su:outofworld] unless predicate su:endblacklist unless predicate su:scblacklist in minecraft:overworld as @n[type=minecraft:armor_stand,tag=slutchest] run function su:f/sc/slutitem
 
 ###################################################################################################################################################################################################
 
@@ -161,13 +163,13 @@ scoreboard players reset @a[scores={magnet=2..}] magnet
 
 
 ####################################################################################XP COMBINE#############################################################################################
-execute unless data storage su:settings combinexp run scoreboard players enable @a combinexp
+execute unless data storage su:settings xpcombine run scoreboard players enable @a combinexp
 execute as @a[scores={combinexp=1},tag=!combinexpenable] run scoreboard players set @s serverutiltoggle3 31
 execute as @a[scores={combinexp=1,serverutiltoggle3=1..}] run title @s actionbar {"text":"XP Combine: Enabled","bold":true,"color":"green"}
 execute as @a[scores={combinexp=1},tag=!combinexpenable] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~
 execute as @a[scores={combinexp=1},tag=!combinexpenable] run tag @s add combinexpenable
 
-execute as @a[scores={combinexp=0}] at @s run function su:f/combinexp
+execute as @a[scores={combinexp=1}] at @s run function su:f/combinexp
 
 execute as @a[scores={combinexp=0},tag=combinexpenable] run scoreboard players set @s serverutiltoggle3 31
 execute as @a[scores={combinexp=0,serverutiltoggle3=1..}] run title @s actionbar {"text":"XP Combine: Disabled","bold":true,"color":"red"}
@@ -183,8 +185,9 @@ execute as @a[scores={tppet=1,serverutiltoggle4=1..}] run title @s actionbar {"t
 execute as @a[scores={tppet=1},tag=!tppetenable] at @s run playsound minecraft:entity.wolf.ambient master @s ~ ~ ~
 execute as @a[scores={tppet=1},tag=!tppetenable] run tag @s add tppetenable
 
+
 execute as @e[type=#su:pets,nbt={Sitting:0b}] at @s if data entity @s Owner unless data entity @s Leash if entity @p[distance=64..] run tag @s add tptoowner
-execute as @a[scores={tppet=0}] at @s run spreadplayers ~ ~ 3 3 true @e[tag=tptoowner]
+execute as @a[scores={tppet=1}] at @s run spreadplayers ~ ~ 3 3 true @e[tag=tptoowner]
 execute as @e[tag=tptoowner] at @s run execute if data entity @s Owner run execute at @s if entity @p[distance=64..] run tag @s add justteleported_inair
 execute as @e[tag=tptoowner] at @s run execute if data entity @s Owner run execute at @s if entity @p[distance=64..] run execute at @p run tp @s ^ ^ ^-2
 execute as @e[tag=justteleported_inair] at @s run effect give @s slow_falling 1
@@ -217,6 +220,7 @@ scoreboard players reset @a[scores={surface=1..}] surface
 
 
 ############################################################################################FEATURE CONFIGURATIONS#################################################################################
+execute if data storage su:settings locate run scoreboard players reset @a locate
 execute if data storage su:settings magnet run scoreboard players reset @a magnet
 execute if data storage su:settings magnet run tag @a[tag=magnetenable] remove magnetenable
 execute if data storage su:settings encumber run scoreboard players reset @a encumber
@@ -230,7 +234,10 @@ execute if data storage su:settings ws.all run scoreboard players reset @a loom
 execute if data storage su:settings ws.all run scoreboard players reset @a cartograph
 execute if data storage su:settings ws.all run scoreboard players reset @a smith
 execute if data storage su:settings ws.ench run scoreboard players reset @a enchant
-
+execute if data storage su:settings xpcombine run scoreboard players reset @a combinexp
+execute if data storage su:settings xpcombine run tag @a[tag=combinexpenable] remove combinexpenable
+execute if data storage su:settings pettp run scoreboard players reset @a tppet
+execute if data storage su:settings xpcombine run tag @a[tag=tppetenable] remove tppetenable
 
 ###################################################################################################################################################################################################
 

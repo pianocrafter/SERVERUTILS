@@ -13,6 +13,8 @@ execute if entity @s[tag=su.svillage] if data storage su:structures s.svillage r
 execute if entity @s[tag=su.snvillage] if data storage su:structures s.snvillage run function su:f/lc/outputmessage with storage su:structures s.snvillage
 execute if entity @s[tag=su.tvillage] if data storage su:structures s.tvillage run function su:f/lc/outputmessage with storage su:structures s.tvillage
 execute if entity @s[tag=su.ecity] if data storage su:structures s.ecity run function su:f/lc/outputmessage with storage su:structures s.ecity
+execute if entity @s[tag=su.whut] if data storage su:structures s.whut run function su:f/lc/outputmessage with storage su:structures s.whut
+execute if entity @s[tag=su.trial] if data storage su:structures s.trial run function su:f/lc/outputmessage with storage su:structures s.trial
 
 
 
@@ -32,6 +34,8 @@ execute if entity @s[tag=su.svillage] unless data storage su:structures s.svilla
 execute if entity @s[tag=su.snvillage] unless data storage su:structures s.snvillage run function su:f/lc/outputmessage2
 execute if entity @s[tag=su.tvillage] unless data storage su:structures s.tvillage run function su:f/lc/outputmessage2
 execute if entity @s[tag=su.ecity] unless data storage su:structures s.ecity run function su:f/lc/outputmessage2
+execute if entity @s[tag=su.whut] unless data storage su:structures s.whut run function su:f/lc/outputmessage2
+execute if entity @s[tag=su.trial] unless data storage su:structures s.trial run function su:f/lc/outputmessage2
 
 execute if entity @s[tag=su.mansion] unless data storage su:structures s.mansion run data modify storage su:structures s.mansion set value 'DISABLED'
 execute if entity @s[tag=su.monument] unless data storage su:structures s.monument run data modify storage su:structures s.monument set value 'DISABLED'
@@ -48,4 +52,6 @@ execute if entity @s[tag=su.svillage] unless data storage su:structures s.svilla
 execute if entity @s[tag=su.snvillage] unless data storage su:structures s.snvillage run data modify storage su:structures s.snvillage set value 'DISABLED'
 execute if entity @s[tag=su.tvillage] unless data storage su:structures s.tvillage run data modify storage su:structures s.tvillage set value 'DISABLED'
 execute if entity @s[tag=su.ecity] unless data storage su:structures s.ecity run data modify storage su:structures s.ecity set value 'DISABLED'
+execute if entity @s[tag=su.whut] unless data storage su:structures s.whut run data modify storage su:structures s.whut set value 'DISABLED'
+execute if entity @s[tag=su.trial] unless data storage su:structures s.trial run data modify storage su:structures s.trial set value 'DISABLED'
 

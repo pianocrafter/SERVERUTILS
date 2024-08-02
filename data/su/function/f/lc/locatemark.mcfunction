@@ -16,6 +16,8 @@ execute if entity @s[scores={locate=13}] run tag @s add su.svillage
 execute if entity @s[scores={locate=14}] run tag @s add su.snvillage
 execute if entity @s[scores={locate=15}] run tag @s add su.tvillage
 execute if entity @s[scores={locate=16}] run tag @s add su.ecity
+execute if entity @s[scores={locate=17}] run tag @s add su.whut
+execute if entity @s[scores={locate=18}] run tag @s add su.trial
 #execute if entity @s[scores={locate=17}] run tag @s add su.
 
 tag @s add su.locate
