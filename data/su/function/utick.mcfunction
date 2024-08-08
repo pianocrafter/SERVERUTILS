@@ -22,12 +22,36 @@ execute as @a run scoreboard players operation @s playTimeHours /= Math hc_playT
 
 advancement revoke @a from su:cloneblock
 
+############################################################################################FEATURE CONFIGURATIONS#################################################################################
+
+execute if data storage su:settings locate run scoreboard players reset @a locate
+execute if data storage su:settings magnet run scoreboard players reset @a magnet
+execute if data storage su:settings magnet run tag @a[tag=magnetenable] remove magnetenable
+execute if data storage su:settings encumber run scoreboard players reset @a encumber
+execute if data storage su:settings encumber run tag @a[tag=encumberenable] remove encumberenable
+execute if data storage su:settings ws.all run scoreboard players reset @a anvil
+execute if data storage su:settings ws.all run scoreboard players reset @a craft
+execute if data storage su:settings ws.all run scoreboard players reset @a stonecut
+execute if data storage su:settings ws.all run scoreboard players reset @a grind
+execute if data storage su:settings ws.all run scoreboard players reset @a loom
+execute if data storage su:settings ws.all run scoreboard players reset @a cartograph
+execute if data storage su:settings ws.all run scoreboard players reset @a smith
+execute if data storage su:settings ws.ench run scoreboard players reset @a enchant
+execute if data storage su:settings ws.echest run scoreboard players reset @a echest
+execute if data storage su:settings xpcombine run scoreboard players reset @a combinexp
+execute if data storage su:settings xpcombine run tag @a[tag=combinexpenable] remove combinexpenable
+execute if data storage su:settings pettp run scoreboard players reset @a tppet
+execute if data storage su:settings xpcombine run tag @a[tag=tppetenable] remove tppetenable
+
+###################################################################################################################################################################################################
+
+
 ############################################################################################WORKSTATIONS###########################################################################################
 execute unless data storage su:settings ws.all run scoreboard players enable @a[advancements={su:anvil=true}] anvil
 execute unless data storage su:settings ws.all run scoreboard players enable @a[advancements={su:craftingtable=true}] craft
 execute unless data storage su:settings ws.all run scoreboard players enable @a[advancements={su:stonecut=true}] stonecut
 execute unless data storage su:settings ws.all run scoreboard players enable @a[advancements={su:grindstone=true}] grind
-execute unless data storage su:settings ws.all run scoreboard players enable @a[advancements={su:echest=true}] echest
+execute unless data storage su:settings ws.echest run scoreboard players enable @a[advancements={su:echest=true}] echest
 execute unless data storage su:settings ws.ench run scoreboard players enable @a[advancements={su:enchant=true}] enchant
 execute unless data storage su:settings ws.all run scoreboard players enable @a[advancements={su:loom=true}] loom
 execute unless data storage su:settings ws.all run scoreboard players enable @a[advancements={su:cartograph=true}] cartograph
@@ -110,7 +134,7 @@ execute as @a[scores={encumber=1},tag=!encumberenable] at @s run playsound minec
 execute as @a[scores={encumber=1},tag=!encumberenable] run tag @s add encumberenable
 
 
-execute as @a[scores={encumber=1}] at @s at @e[type=item,distance=..1] run function su:f/encumber
+execute as @a[scores={encumber=1}] at @s at @e[type=item,distance=..5] run function su:f/encumber
 execute as @a[scores={encumber=1,magnet=1}] at @s positioned ~-5.5 ~-4.5 ~-5.5 at @e[type=item,dx=11.5,dy=12.5,dz=11.5] run function su:f/encumber
 
 execute as @a[scores={encumber=1}] unless entity @s[predicate=su:sneaking,x_rotation=90] at @s as @e[type=item,distance=..1,tag=encumbered] run data modify entity @s PickupDelay set value 4
@@ -217,46 +241,6 @@ execute as @a[scores={surface=1..}] at @s run playsound minecraft:entity.player.
 
 scoreboard players reset @a[scores={surface=1..}] surface
 ###################################################################################################################################################################################################
-
-
-############################################################################################FEATURE CONFIGURATIONS#################################################################################
-execute if data storage su:settings locate run scoreboard players reset @a locate
-execute if data storage su:settings magnet run scoreboard players reset @a magnet
-execute if data storage su:settings magnet run tag @a[tag=magnetenable] remove magnetenable
-execute if data storage su:settings encumber run scoreboard players reset @a encumber
-execute if data storage su:settings encumber run tag @a[tag=encumberenable] remove encumberenable
-execute if data storage su:settings ws.all run scoreboard players reset @a anvil
-execute if data storage su:settings ws.all run scoreboard players reset @a craft
-execute if data storage su:settings ws.all run scoreboard players reset @a stonecut
-execute if data storage su:settings ws.all run scoreboard players reset @a grind
-execute if data storage su:settings ws.all run scoreboard players reset @a echest
-execute if data storage su:settings ws.all run scoreboard players reset @a loom
-execute if data storage su:settings ws.all run scoreboard players reset @a cartograph
-execute if data storage su:settings ws.all run scoreboard players reset @a smith
-execute if data storage su:settings ws.ench run scoreboard players reset @a enchant
-execute if data storage su:settings xpcombine run scoreboard players reset @a combinexp
-execute if data storage su:settings xpcombine run tag @a[tag=combinexpenable] remove combinexpenable
-execute if data storage su:settings pettp run scoreboard players reset @a tppet
-execute if data storage su:settings xpcombine run tag @a[tag=tppetenable] remove tppetenable
-
-###################################################################################################################################################################################################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

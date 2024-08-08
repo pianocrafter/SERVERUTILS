@@ -5,6 +5,7 @@
 	"minecraft:tall_grass",
 	"minecraft:dead_bush",
 	"minecraft:seagrass",
-	"minecraft:tall_seagrass"
+	"minecraft:tall_seagrass",
+  "minecraft:structure_void"
   ]
 }

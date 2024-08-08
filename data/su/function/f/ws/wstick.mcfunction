@@ -12,6 +12,8 @@ scoreboard players operation WSY2 suTest += ADDSUB suTest
 scoreboard players operation WSX1 suTest -= ADDSUB suTest
 scoreboard players operation WSX2 suTest += ADDSUB suTest
 
+execute if score WSX1 suTest matches ..-90 run scoreboard players set WSX1 suTest -90
+
 #execute unless score WSY1 suTest matches -180..180 run function su:f/ws/cordsfix {name:"WSY1"}
 #execute unless score WSY2 suTest matches -180..180 run function su:f/ws/cordsfix {name:"WSY2"}
 
