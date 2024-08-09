@@ -1,2 +1,2 @@
 data remove storage su:settings ws.ench
-function su:_settings
+function su:f/settings/settings2

@@ -5,11 +5,10 @@
     "location": {
       "position": {
         "y": {
-          "min": -64,
-          "max": -32
+          "min": -100,
+          "max": -64
         }
-      },
-      "dimension": "minecraft:the_end"
+      }
     }
   }
 }

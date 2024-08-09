@@ -23,10 +23,14 @@ execute store result storage su:temp ws.xr1 int 1 run scoreboard players get WSX
 execute store result storage su:temp ws.xr2 int 1 run scoreboard players get WSX2 suTest
 data modify storage su:temp ws.wsname set from entity @s data.ws
 
+execute if block ~ ~ ~ #minecraft:air run function su:f/ws/stopexploit with storage su:temp ws
 function su:f/ws/removews with storage su:temp ws
+
 
 scoreboard players reset ADDSUB suTest
 scoreboard players reset WSY1 suTest
 scoreboard players reset WSY2 suTest
 scoreboard players reset WSX1 suTest
 scoreboard players reset WSX2 suTest
+
+data remove storage su:temp ws

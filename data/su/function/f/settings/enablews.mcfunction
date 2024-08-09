@@ -1,2 +1,2 @@
-data remove storage su:settings ws
-function su:_settings
+data remove storage su:settings ws.all
+function su:f/settings/settings2

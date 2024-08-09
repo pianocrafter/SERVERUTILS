@@ -44,6 +44,15 @@
 	"minecraft:sugar",
 	"minecraft:wheat",
 	"minecraft:potato",
-	"minecraft:poisonous_potato"
+	"minecraft:poisonous_potato",
+	"minecraft:cactus",
+	"minecraft:moss_carpet",
+	"minecraft:stick",
+	"minecraft:kelp",
+	"minecraft:big_dripleaf",
+	"minecraft:nautilus_shell",
+	"minecraft:glow_ink_sac",
+	"minecraft:ink_sac",
+	"minecraft:bone_meal"
   ]
 }

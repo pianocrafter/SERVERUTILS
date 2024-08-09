@@ -7,4 +7,4 @@ $execute if score WSY1 suTest >= WSY2 suTest unless entity @a[distance=..5,y_rot
 $execute if score WSY1 suTest <= WSY2 suTest unless entity @a[distance=..5,y_rotation=$(yr1)..$(yr2),x_rotation=$(xr1)..$(xr2)] run fill ~ ~-1 ~ ~ ~ ~ air replace stone_button
 $execute if score WSY1 suTest >= WSY2 suTest unless entity @a[distance=..5,y_rotation=$(yr2)..$(yr1),x_rotation=$(xr1)..$(xr2)] run kill @s
 $execute if score WSY1 suTest <= WSY2 suTest unless entity @a[distance=..5,y_rotation=$(yr1)..$(yr2),x_rotation=$(xr1)..$(xr2)] run kill @s
-data remove storage su:temp ws
+

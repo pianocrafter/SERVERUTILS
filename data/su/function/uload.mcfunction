@@ -1,5 +1,9 @@
 tellraw @a {"text":"Reloaded!","color":"green"}
 
+##########Pack number##########
+
+# -------------1---------------
+
 ##########General##########
 scoreboard objectives add serverutiltoggle dummy
 scoreboard objectives add serverutiltoggle2 dummy
@@ -28,6 +32,7 @@ scoreboard objectives add glowmobs trigger
 
 ##########Locate###########
 scoreboard objectives add locate trigger
+gamerule commandBlockOutput false
 
 ##########Encumber#########
 scoreboard objectives add encumber trigger
@@ -52,9 +57,9 @@ scoreboard players set SLUTSUB slutTest 27
 
 ##########Combine XP#######
 scoreboard objectives add combinexp trigger
-scoreboard objectives add ketsu.xp dummy
-scoreboard objectives add ketsu.processed dummy
-scoreboard objectives add ketsu.merge dummy
+scoreboard objectives add suxp.xp dummy
+scoreboard objectives add suxp.processed dummy
+scoreboard objectives add suxp.merge dummy
 
 ##########Tp Pet###########
 scoreboard objectives add tppet trigger
@@ -71,3 +76,8 @@ execute store result score FEEDBACK suTest run gamerule sendCommandFeedback
 schedule function su:u10tick 10t replace
 schedule function su:u10sec 10s replace
 #fill 0 -64 0 15 -50 15 bedrock hollow
+
+##########REMOVE AFTER FIRST UPDATE############
+execute unless score PACKNUM suTest matches 1.. run function su:f/settings/disableall
+execute unless score PACKNUM suTest matches 1.. run function su:f/lc/lcfix
+scoreboard players set PACKNUM suTest 1

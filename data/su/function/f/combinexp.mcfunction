@@ -1,3 +1,3 @@
-execute as @e[type=minecraft:experience_orb,distance=..10] at @s if entity @e[type=minecraft:experience_orb,distance=0.001..2] store result score @s ketsu.xp run data get entity @s Value
-tag @e[type=minecraft:experience_orb,tag=ketsu.processed,distance=..10] remove ketsu.processed
-execute as @e[type=minecraft:experience_orb,distance=..10] at @s if entity @e[type=minecraft:experience_orb,distance=0.001..2] run function su:xp/test
+execute as @e[type=minecraft:experience_orb,distance=..10] at @s if entity @e[type=minecraft:experience_orb,distance=0.001..2] store result score @s suxp.xp run data get entity @s Value
+tag @e[type=minecraft:experience_orb,tag=suxp.processed,distance=..10] remove suxp.processed
+execute as @e[type=minecraft:experience_orb,distance=..10] at @s if entity @e[type=minecraft:experience_orb,distance=0.001..2] run function su:f/xp/test

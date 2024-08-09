@@ -23,4 +23,6 @@ tag @s remove glowmobVINDI
 tag @s remove glowmobVINDICATOR
 tag @s remove glowmobWITCH
 tag @s remove glowmobWITHERSKEL
+tag @s remove glowmobCREEPER
+tag @s remove glowmobENDERMAN
 scoreboard players set @s glowmobs 1
