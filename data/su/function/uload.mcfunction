@@ -3,14 +3,20 @@ tellraw @a {"text":"Reloaded!","color":"green"}
 ##########Pack number##########
 
 # -------------1---------------
+scoreboard players set PACKNUM suTest 1
+# -----------------------------
 
-##########General##########
+##########Integrations#########
+scoreboard objectives add tpa.pid dummy "Player ID"
+scoreboard objectives setdisplay list tpa.pid
+scoreboard players set divideTime ts_LastDeath 1200
+scoreboard objectives add timeSinceDeath dummy
+
+############General############
 scoreboard objectives add serverutiltoggle dummy
 scoreboard objectives add serverutiltoggle2 dummy
 scoreboard objectives add serverutiltoggle3 dummy
 scoreboard objectives add serverutiltoggle4 dummy
-scoreboard players set divideTime ts_LastDeath 1200
-scoreboard objectives add timeSinceDeath dummy
 scoreboard objectives add suTest dummy
 
 ##########Workstations########
@@ -77,7 +83,6 @@ schedule function su:u10tick 10t replace
 schedule function su:u10sec 10s replace
 #fill 0 -64 0 15 -50 15 bedrock hollow
 
-##########REMOVE AFTER FIRST UPDATE############
+##########SETUP COMMANDS############
 execute unless score PACKNUM suTest matches 1.. run function su:f/settings/disableall
 execute unless score PACKNUM suTest matches 1.. run function su:f/lc/lcfix
-scoreboard players set PACKNUM suTest 1
