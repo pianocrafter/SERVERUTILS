@@ -5,6 +5,7 @@
 #tp pianoboy913 0 400 0
 
 #############################################################################VANILLA TWEAKS INGEGRATIONS##################################################################################
+
 execute as @a unless score @s tpa.pid matches 1.. store result score @s tpa.pid run scoreboard players add #last tpa.pid 1
 execute as @a run scoreboard players operation @s timeSinceDeath = @s ts_LastDeath
 execute as @a run scoreboard players operation @s timeSinceDeath /= divideTime ts_LastDeath
@@ -59,5 +60,5 @@ execute unless data storage su:settings slut in minecraft:the_end as @e[type=ite
 
 
 #########################################################################################MAIN PLAYER TICK##########################################################################################
-execute as @a at @s run function su:utick
+execute as @a at @s run function su:f/idtickpass with storage su:temp
 ###################################################################################################################################################################################################

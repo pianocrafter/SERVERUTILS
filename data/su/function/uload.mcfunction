@@ -8,6 +8,7 @@ scoreboard players set PACKNUM suTest 1
 
 ##########Integrations#########
 scoreboard objectives add tpa.pid dummy "Player ID"
+scoreboard objectives add su.id dummy "Server ID"
 scoreboard objectives setdisplay list tpa.pid
 scoreboard players set divideTime ts_LastDeath 1200
 scoreboard objectives add timeSinceDeath dummy
@@ -39,6 +40,7 @@ scoreboard objectives add glowmobs trigger
 ##########Locate###########
 scoreboard objectives add locate trigger
 gamerule commandBlockOutput false
+data remove storage su:structures s
 
 ##########Encumber#########
 scoreboard objectives add encumber trigger

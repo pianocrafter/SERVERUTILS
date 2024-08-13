@@ -11,6 +11,9 @@ execute as @s[gamemode=creative] run function su:uctick
 
 
 
+
+#execute as @a unless score @s su.id matches 1.. store result score @s su.id run scoreboard players add #last su.id 1
+
 ############################################################################################WORKSTATIONS###########################################################################################
 execute unless data storage su:settings ws.all run scoreboard players enable @s[advancements={su:anvil=true}] anvil
 execute unless data storage su:settings ws.all run scoreboard players enable @s[advancements={su:craftingtable=true}] craft
@@ -128,10 +131,10 @@ execute as @s[scores={magnet=1,serverutiltoggle2=1..}] run title @s actionbar {"
 execute as @s[scores={magnet=1},tag=!magnetenable] run playsound minecraft:entity.player.teleport master @s ~ ~ ~
 execute as @s[scores={magnet=1},tag=!magnetenable] run tag @s add magnetenable
 
-function su:f/selectitem
+execute as @s[scores={magnet=1}] run function su:f/selectitem
 execute as @s[scores={magnet=1}] run function su:f/selectarrow
-execute as @e[type=#minecraft:arrows,tag=!playerarrow,tag=!skelarrow,distance=..128] run tag @s add skelarrow
-execute as @e[type=minecraft:trident,tag=!playerarrow,tag=!skelarrow,distance=..128] run tag @s add skelarrow
+#execute as @e[type=#minecraft:arrows,tag=!playerarrow,tag=!skelarrow,distance=..128] run tag @s add skelarrow
+#execute as @e[type=minecraft:trident,tag=!playerarrow,tag=!skelarrow,distance=..128] run tag @s add skelarrow
 
 execute as @e[type=item,tag=!nonPlayerItem] unless entity @s[tag=PlayerItem] run tag @s add nonPlayerItem
 execute as @e[type=experience_orb,tag=!nonPlayerItem] unless entity @s[tag=PlayerItem] run tag @s add nonPlayerItem
@@ -141,7 +144,7 @@ scoreboard players set @s[scores={itemDiamondTest=1..}] itemTest 1
 scoreboard players set @s[scores={itemDiamondTest2=1..}] itemTest 1
 scoreboard players set @s[scores={itemNetheriteTest=1..}] itemTest 1
 #######################
-execute as @e[type=item,tag=PlayerItem,tag=!encumbered,distance=..1] at @s run function su:f/tpitem
+execute as @e[type=item,tag=PlayerItem,tag=!encumbered,distance=8..128] at @s run function su:f/tpitem
 execute positioned ~ ~1.6 ~ positioned ^ ^ ^2.75 positioned ~-2.875 ~-2.875 ~-2.875 as @e[type=item,tag=PlayerItem,tag=!encumbered,dx=5.75,dy=5.75,dz=5.75] at @s run function su:f/tpitem
 execute as @e[type=experience_orb,tag=PlayerItem,distance=..8] at @s run function su:f/tpitem
 #######################
@@ -188,9 +191,9 @@ execute unless data storage su:settings sf.all run scoreboard players enable @s 
 
 execute as @s[scores={surface=1..}] run function back:set_back
 execute as @s[scores={surface=1..}] if dimension minecraft:overworld run spreadplayers ~ ~ 1 8 false @s
-execute as @s[scores={surface=1..}] if dimension minecraft:overworld run playsound minecraft:entity.player.teleport master @s ~ ~ ~
+execute as @s[scores={surface=1..}] if dimension minecraft:overworld at @s run playsound minecraft:entity.player.teleport master @s ~ ~ ~
 execute unless data storage su:settings sf.nether as @s[scores={surface=1..}] if dimension minecraft:the_nether run spreadplayers ~ ~ 1 8 false @s
-execute unless data storage su:settings sf.nether as @s[scores={surface=1..}] if dimension minecraft:the_nether run playsound minecraft:entity.player.teleport master @s ~ ~ ~
+execute unless data storage su:settings sf.nether as @s[scores={surface=1..}] if dimension minecraft:the_nether at @s run playsound minecraft:entity.player.teleport master @s ~ ~ ~
 execute if data storage su:settings sf.nether as @s[scores={surface=1..}] if dimension minecraft:the_nether run tellraw @s ["",{"text":"[","color":"dark_red"},{"text":"\u26a0","color":"red"},{"text":"]","color":"dark_red"},{"text":" Surface command is disabled for nether","color":"red"}]
 execute if data storage su:settings sf.nether as @s[scores={surface=1..}] if dimension minecraft:the_nether run playsound minecraft:block.note_block.didgeridoo master @s ~ ~ ~
 
