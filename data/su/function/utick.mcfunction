@@ -145,7 +145,8 @@ scoreboard players set @s[scores={itemDiamondTest2=1..}] itemTest 1
 scoreboard players set @s[scores={itemNetheriteTest=1..}] itemTest 1
 #######################
 execute as @e[type=item,tag=PlayerItem,tag=!encumbered,distance=8..128] at @s run function su:f/tpitem
-execute positioned ~ ~1.6 ~ positioned ^ ^ ^2.75 positioned ~-2.875 ~-2.875 ~-2.875 as @e[type=item,tag=PlayerItem,tag=!encumbered,dx=5.75,dy=5.75,dz=5.75] at @s run function su:f/tpitem
+execute unless predicate su:checkaxe positioned ~ ~1.6 ~ positioned ^ ^ ^2.75 positioned ~-2.875 ~-2.875 ~-2.875 as @e[type=item,tag=PlayerItem,tag=!encumbered,dx=5.75,dy=5.75,dz=5.75] at @s run function su:f/tpitem
+execute if predicate su:checkaxe if predicate su:sneaking positioned ~ ~1.6 ~ positioned ^ ^ ^2.75 positioned ~-2.875 ~-2.875 ~-2.875 as @e[type=item,tag=PlayerItem,tag=!encumbered,dx=5.75,dy=5.75,dz=5.75] at @s run function su:f/tpitem
 execute as @e[type=experience_orb,tag=PlayerItem,distance=..8] at @s run function su:f/tpitem
 #######################
 scoreboard players reset @s[scores={itemKillTest=1..}] itemKillTest
