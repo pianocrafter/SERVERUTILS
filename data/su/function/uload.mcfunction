@@ -74,7 +74,13 @@ scoreboard objectives add tppet trigger
 
 ##########Hat##############
 scoreboard objectives add hat trigger
+
+##########Surface Command##############
 scoreboard objectives add surface trigger
+
+##########Trash##############
+scoreboard objectives add trash trigger
+scoreboard objectives add suTrashCD dummy
 
 ##########Cloneblock#######
 advancement revoke @a only su:cloneblock

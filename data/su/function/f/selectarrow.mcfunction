@@ -1,5 +1,4 @@
-execute as @e[type=#minecraft:arrows,tag=!playerarrow,distance=..128] unless entity @s[tag=skelarrow] at @s as @e[type=!#minecraft:arrows,limit=1,sort=nearest] if entity @s[type=minecraft:skeleton] run tag @e[type=#minecraft:arrows,sort=nearest,limit=1] add skelarrow
-execute as @e[type=#minecraft:arrows,tag=!playerarrow,distance=..128] unless entity @s[tag=skelarrow] at @s as @e[type=!#minecraft:arrows,limit=1,sort=nearest] if entity @s[type=minecraft:stray] run tag @e[type=#minecraft:arrows,sort=nearest,limit=1] add skelarrow
+execute as @e[type=#minecraft:arrows,tag=!playerarrow,distance=..128] unless entity @s[tag=skelarrow] at @s as @e[type=!#minecraft:arrows,limit=1,sort=nearest] if entity @s[type=#su:arrowmobs] run tag @e[type=#minecraft:arrows,sort=nearest,limit=1] add skelarrow
 execute as @e[type=#minecraft:arrows,tag=!skelarrow,distance=..128] at @s as @e[type=!#minecraft:arrows,limit=1,sort=nearest] if entity @s[type=minecraft:player] if predicate su:checkranged run tag @e[type=#minecraft:arrows,sort=nearest,limit=1] add playerarrow
 
 execute as @e[type=minecraft:trident,tag=!playerarrow,distance=..128] unless entity @s[tag=skelarrow] at @s as @e[type=!trident,limit=1,sort=nearest] if entity @s[type=minecraft:drowned] run tag @e[type=trident,sort=nearest,limit=1] add skelarrow

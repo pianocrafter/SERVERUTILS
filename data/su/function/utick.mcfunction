@@ -124,6 +124,30 @@ execute as @s[scores={encumber=0},tag=encumberenable] run tag @s remove encumber
 scoreboard players reset @s[scores={encumber=2..}] encumber
 ###########################################################################################################################################################################################
 
+###################################################################################ITEM TRASH############################################################################################
+execute unless data storage su:settings trash run scoreboard players enable @s trash
+scoreboard players set @s[scores={trash=1}] suTrashCD 631
+scoreboard players set @s[scores={trash=1}] trash 2
+
+
+title @s[scores={suTrashCD=601..}] actionbar {"text":"Trash: Enabled","bold":true,"color":"green"}
+playsound minecraft:block.composter.ready player @s[scores={suTrashCD=631}] ~ ~ ~
+
+#CODE
+execute as @s[scores={trash=1..600}] run function su:f/t/trash
+
+title @s[scores={suTrashCD=-30..0}] actionbar {"text":"Trash: Disabled","bold":true,"color":"red"}
+playsound minecraft:block.composter.empty player @s[scores={suTrashCD=0}] ~ ~ ~
+
+scoreboard players remove @s[scores={suTrashCD=-30..}] suTrashCD 1
+scoreboard players reset @s[scores={trash=2,suTrashCD=..0}] trash
+scoreboard players set @s[scores={trash=3..}] suTrashCD 0
+scoreboard players reset @s[scores={trash=3..}] trash
+scoreboard players reset @s[scores={suTrashCD=..-30}] suTrashCD
+
+###########################################################################################################################################################################################
+
+
 ###################################################################################ITEM MAGNET############################################################################################
 execute unless data storage su:settings magnet run scoreboard players enable @s magnet
 execute as @s[scores={magnet=1},tag=!magnetenable] run scoreboard players set @s serverutiltoggle2 31

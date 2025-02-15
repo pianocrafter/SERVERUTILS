@@ -1,0 +1,2 @@
+execute positioned ~ ~1 ~ as @e[type=item,distance=..1] at @s if score @n[type=minecraft:player] trash matches 2 run data merge entity @s {Age:5997s}
+execute positioned ~ ~1 ~ if entity @e[type=item,distance=..1,nbt={Age:5997s}] run scoreboard players set @s suTrashCD 600

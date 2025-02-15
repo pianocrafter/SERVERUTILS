@@ -5,7 +5,7 @@
 	"#minecraft:dirt",
 	"#minecraft:sand",
 	"#minecraft:fishes",
-	"#minecraft:flowers",
+	"#minecraft:small_flowers",
 	"#minecraft:leaves",
 	"#minecraft:logs",
 	"#minecraft:meat",
@@ -53,6 +53,10 @@
 	"minecraft:nautilus_shell",
 	"minecraft:glow_ink_sac",
 	"minecraft:ink_sac",
-	"minecraft:bone_meal"
+	"minecraft:bone_meal",
+	"minecraft:rose_bush",
+	"minecraft:lilac",
+	"minecraft:peony",
+	"minecraft:sunflower"
   ]
 }

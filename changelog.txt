@@ -1,0 +1,5 @@
+New Features:
+- Trash function
+Bug Fixes:
+- Fixed an issue where arrows would be magnitized from other arrow-firing enimies
+- Fixed an issue where the menus of glowmobs and server settings would appear to all other players

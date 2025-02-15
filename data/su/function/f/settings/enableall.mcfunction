@@ -12,6 +12,7 @@ data remove storage su:settings sf.all
 data remove storage su:settings sf.nether
 data remove storage su:settings glow
 data remove storage su:settings glowmobs
+data remove storage su:settings trash
 #data remove storage su:settings SETTING
 
 function su:_settings
