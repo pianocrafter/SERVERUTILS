@@ -1,4 +1,3 @@
-#say test
 gamerule sendCommandFeedback true
 
 execute if entity @s[scores={locate=2}] run tag @s add su.mansion

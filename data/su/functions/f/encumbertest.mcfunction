@@ -1,0 +1,1 @@
+$execute unless entity @s[nbt={Inventory:[{id:"$(SavedItem)"}]}] run tag @e[sort=nearest,type=minecraft:item,distance=..0.1] add encumbered
